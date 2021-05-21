@@ -1,0 +1,39 @@
+/**
+ * Z-Index
+ * Define the z-index stacking for the site
+ * @group css.base.z-index
+ *
+ * @example
+ *     @include z-index(navigation);
+ */
+
+// ------------------------------------------------
+// Define Z-Index Order
+// ------------------------------------------------
+
+$z-index: (
+  sidePriceSplat:    100,
+  clubWowcherPoints: 200,
+  buttonOptions:     300,
+  appMask:           380,
+  navigation:        400,
+  navigationMore:    450,
+  mobileMenu:        480,
+  locationOverlay:   500,
+  topSearches:       500,
+  productSelection:  600,
+  lightbox:          1000,
+  loaderOverlay:     2000,
+);
+
+// ------------------------------------------------
+// Functional - Do Not Edit
+// ------------------------------------------------
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+  z-index: z-index($key);
+}

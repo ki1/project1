@@ -1,0 +1,54 @@
+@import 'imports';
+
+/* Bootstrap overrides before Bootstrap import */
+
+// old Angular site values, may want to change depending on tablet decisions
+/*
+  breakpoints from the theme:
+    smDown: '575.98px',
+    smUp: '576px',
+    mdDown: '767.98px',
+    mdUp: '768px',
+    lgDown: '991.98px',
+    lgUp: '992px',
+    xlDown: '1199.98px',
+    xlUp: '1200px',
+*/
+
+$container-max-widths: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+$font-family-sans-serif: none !default;
+
+$link-color: #1b94e4;
+
+// MODAL change from 1rem, Wowcher styling has a bit less whitespace
+$modal-header-padding-y: 0.75rem !default;
+$modal-header-padding-x: 0.75rem !default;
+$modal-header-padding: $modal-header-padding-y $modal-header-padding-x !default; // Keep this for backwards compatibility
+
+.modal .modal-header {
+  border-bottom: 0px;
+}
+.modal-title {
+  font-weight: bold;
+}
+
+.modal-backdrop.modal-backdrop-wowcher {
+  background-color: #000000;
+}
+.modal-backdrop.modal-backdrop-livingsocial {
+  background-color: #000000;
+}
+.modal-backdrop.modal-backdrop-vip {
+  background-color: #000000;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+@import 'bootstrapCustom';

@@ -1,0 +1,116 @@
+// ------------------------------------------------
+// Application Colours
+// ------------------------------------------------
+
+/**
+ * @group css.base.colours
+ * @param {color} $color-mine-shaft
+ * To name colours: http://chir.ag/projects/name-that-color/
+ */
+
+// Black to White
+$color-black: #000000;
+$color-vip-black: #2c2c2c;
+$color-cod-gray: #111111;
+$color-mine-shaft: #333333;
+$color-dove-gray: #666666;
+$color-white: #ffffff;
+$color-offwhite: #f0f0f0;
+
+// Greys
+$color-gray: #7f7f7f; // darker still
+$color-silver-chalice: #b2b2b2; // darker
+$color-dusty-gray: #979797; // dark
+$color-silver: #8d7878; // silver, --quaternity bg
+$color-alto: #e0e0e0; // main
+$color-gallery: #eeeeee; // light
+$color-header-button: #dbdbdb; // sign up, basket icon
+$color-wild-sand: #f6f6f6; // light
+$color-alabaster: #fcfcfc; // lighter
+$color-mercury: #e4e4e4; // AHHH MY EYES!!!!
+
+// Wowcher Pinks
+$color-flirt: #c1007c;
+$color-siren: #780048; // darkest
+$color-fresh-eggplant: #8f0055; // darker
+$color-lipstick: #c90078; // dark
+$color-hollywood-cerise: #eb008c; // main
+
+$kobi: #ec9ecd;
+
+// Greens
+$color-apple1: #548e3d; // dark
+$color-apple2: #61a447; // main
+$color-fern: #6bba70; // light
+$color-fruit-salad: #5b9b4f; // light
+
+// Oranges
+$color-tango: #f0812b; // main
+$color-crusta: #fa8c35; // light
+$color-yellow-orange: #ffa049; // lighter
+
+// Dark Blues
+$color-fun-blue: #176eab; // dark
+$color-steel-blue: #3c78aa; // main
+$color-blue-ribbon: #006ffd; // light
+$color-google__blue: #4285f4;
+
+// Light Blues
+$color-calypso: #256781; // darker
+$color-astral: #3289ac; // dark
+$color-shakespeare: #3facd7; // main
+$color-viking: #65bcdf; // light
+$color-cornflower: #8bcde7; // lighter
+$color-dodger-blue: #00b8fe; // lightest
+$color-bostan-blue: #389ac1;
+
+// Purples
+$color-jacarta: #3a3370; // dark
+$color-victoria: #544aa1; // main
+$color-scampi: #655caa; // light
+$color-wild-blue-wonder: #8780bd; // lighter
+
+// Yellows
+$color-hacienda: #8b6f16; // darker
+$color-nugget: #ba941e; // dark
+$color-fuel-yellow: #e9ba26; // main
+$color-ronchi: #edc751; // light
+$color-golden-sand: #f1d57c; // lighter
+$color-golden-rod: #daa520;
+
+$color-pearl-lusta: #fbf0d5;
+$color-twine: #c5a05f;
+
+// Reds
+$color-burnt-umber: #8d2524; // darker
+$color-well-read: #bc3230; // dark
+$color-cinnabar: #eb3f3c; // main
+$color-burnt-sienna: #ef6562; // light
+$color-froly: #f38b8a; // lighter
+
+// Brand
+$wowcher-blue: #1b94e4;
+$wowcher-pink: $color-hollywood-cerise;
+$wowcher-grey: #cccccc;
+$wowcher-navy: #334151;
+
+$facebook-blue: #0052a3;
+$twitter-blue: #4099ff;
+$instagram-blue: #125688;
+$pinterest-red: #c92228;
+$whatsapp-green: #25d366;
+
+$success-green: $color-fern;
+$error-red: $color-cinnabar;
+
+$soc-nasty-color: red;
+$soc-nice-color: rgb(1, 185, 1);
+
+// tiles
+$tile-header: #e6e6e6;
+$tile-background: #f5f5f5;
+
+// input color
+$color-input-border: #d4d4d4;
+$color-input-text: #555555;
+$color-input-placeholder: #999;

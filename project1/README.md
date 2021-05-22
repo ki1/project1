@@ -1,34 +1,146 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This the Wowcher React App repo
 
 ## Getting Started
 
-First, run the development server:
+### NVM
+
+Install [NVM](https://github.com/nvm-sh/nvm#install--update-script) if you have not installed it already.
+
+Alternatively, if you're using MacOS and have Homebrew installed, run:
 
 ```bash
-npm run dev
-# or
-yarn dev
+brew install nvm
 ```
+
+Don't forget to install the additional script to add in `~/.bashrc` / `./zshrc`. Then close and reopen your terminal to apply the changes.
+
+In the console, `cd` to the repo root and run `nvm use`. This will install the correct Node and NPM version automatically, as specified in `.nvmrc`.
+
+To test that the correct Node version is running, run `node --version` or `nvm current`.
+
+##
+
+Run `npm install` as usual.
+
+Rename `.env.local.example` file to `.env.local`
+
+Run development server by running `npm run dev`
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Running Storybook
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+To run storybook use
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+npm run storybook
+```
 
-## Learn More
+when making changes to storybook stories you will need to rebuild the storybook system if not done automatically
+in this case use
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build-storybook
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+this will force storybook to rebuild the whole library and stories with your changes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+If you are adding addons for storybook, you will need to add the addon in `.storybook/main.js`
 
-## Deploy on Vercel
+If you would like to autoload your addons without implicitly importing those dependancies manually, you can add them inside `.storybook/preview.js`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+import them as normal and set `addDecorator(*insert import name*);`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Running Unit tests
+
+To run unit tests use
+
+```bash
+npm run test
+```
+
+Although we will use the folder `__test__` to store all our tests, this command will search for all the files in the project with the preffix .test.
+
+All the test configuration is done in the files
+`jest.config.js`
+`jest.setup.js`
+
+The file `fileMock` will be use to mock all the documents that not need to be tested (like CSS or image files).
+
+## Installing Cypress
+
+Our smoke tests and integration tests will be using cypress.
+
+Current version of cypress we are using is `6.8.0`
+
+`You can install this globally on your system`
+
+```bash
+sudo npm install -g cypress@6.8.0
+```
+
+`You can install this locally on your system`
+
+```bash
+npm install cypress@6.8.0
+```
+
+## Smoke Tests
+
+Our intentions is to write e2e tests to test our core pages.
+
+There are two ways you can run this through the cli or through the headless browser.
+
+Highly recommend if developing please use the cli to give you more insight and tools to help right the tests.
+
+When developing please read the readme.md to in the cypress folder.
+
+Any failed tests will attempt to rerun again to stop flakiness of tests or how they are written.
+
+### Run desktop tests through the cli locally
+
+`Make sure you have your application running locally`
+
+```bash
+npm run cypress:smoke
+```
+
+### Run tests base on url e.g dev05
+
+`You can run this against an environment`
+
+```bash
+BASEURL={url} npm run cypress:smoke
+```
+
+### Run mobile smoke tests
+
+`To run tests with mobile view port`
+
+```bash
+npm run cypress:smoke:mobile
+```
+
+### Run tablet smoke tests
+
+`To run tests with mobile view port`
+
+```bash
+npm run cypress:smoke:tablet
+```
+
+### Run Smoke tests through headless
+
+`You can run the tests through the headless browser. The default command will run against your local environment`
+
+```bash
+npm run cypress:smoke:run
+```
+
+## Integration Tests
+
+`You can run integration tests, which is the default behaviour. Please make sure your have your application running`
+
+```bash
+npm run cypress
+```

@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import dynamic from 'next/dynamic';
@@ -12,7 +12,7 @@ import {
 } from '../../config/setup/setup';
 import { wrapper } from '../../redux/store/store';
 import { getDealInfo } from '../../helpers/ssr';
-import ThemeContext from '../../providers/ThemeProvider';
+// import ThemeContext from '../../providers/ThemeProvider';
 // import Filters from '../../components/filters/filters';
 import BreadCrumb from '../../components/breadcrumb/BreadCrumb';
 import FacetedNavigationContainer from '../../components/category/FacetedNavigationContainer';
@@ -37,7 +37,7 @@ const Deals = () => {
     deals,
     secondary_deals,
     ssr,
-    tiles,
+    // tiles,
     nomoredeals,
     filterDeals,
   ] = useSelector((state) => [
@@ -52,19 +52,19 @@ const Deals = () => {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
   const location = useSelector((state) => state.locations.location);
   const { pageType } = useSelector((state) => state.pagetype);
-  const theme = useContext(ThemeContext);
-  const currentNumTiles = tiles?.tiles?.length || 0;
+  //const theme = useContext(ThemeContext);
+  //const currentNumTiles = tiles?.tiles?.length || 0;
 
   const dispatch = useDispatch();
   const [pageNotFound, setPageNotFound] = useState(false);
   const [previousAsPath, setRouterAsPath] = useState('');
 
-  const lastPage = useRef(0);
+  // const lastPage = useRef(0);
   const pageInitial = useRef(0);
 
-  const updateLastPage = (defaultValue = 0) => {
+  /* const updateLastPage = (defaultValue = 0) => {
     lastPage.current = defaultValue;
-  };
+  }; */
   const updateInitialPage = (defaultValue = 0) => {
     pageInitial.current = defaultValue;
   };
@@ -80,12 +80,12 @@ const Deals = () => {
   useVideoScroll();
 
   // Dont use useState for this parameters
-  let fCategory = useRef('');
+  /* et fCategory = useRef('');
   let fLocation = useRef('');
   let fSubCategory = useRef('');
   let fSortby = useRef('');
   let fPriceMin = useRef('');
-  let fPriceMax = useRef('');
+  let fPriceMax = useRef(''); */
 
   useEffect(() => {
     if (filterDeals.nomore === noMoreFiltersData.current) return;
@@ -191,10 +191,9 @@ const Deals = () => {
               <div className="row">
                 {secondary_deals.map((deal) => {
                   return (
-                    <div className="col-sm-6 col-lg-12">
+                    <div key={deal.id} className="col-sm-6 col-lg-12">
                       <SecondaryDeal
                         deal={deal}
-                        key={deal.id}
                         extraclasses={'full-width small-deal'}
                         isXS={true}
                       />

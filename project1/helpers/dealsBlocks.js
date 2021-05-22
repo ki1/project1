@@ -3,6 +3,7 @@ import FeaturedDealCard from '../components/deal/featuredDealCard';
 import MediumDeal from '../components/deal/mediumDeal';
 import { hashCode } from './hash';
 
+// eslint-disable-next-line sonarjs/cognitive-complexity
 const FeaturedBlockA = (dealsAux, position, filtersURL = '') => {
   // We show a featured deal only if position is 0 and featureCAtegoryDeal || featuredSubCatDeal is true
   return (

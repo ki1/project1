@@ -38,6 +38,9 @@ const BottomDeals = ({
       const auxId = item && item[0] && item[0].id ? item[0].id : hashCode();
       return (
         <Fragment key={`bottom_fragment_${index}_${auxId}}`}>
+          <p>
+            <b>SSR DEALS</b>
+          </p>
           <div className="bottom-deals container deals-products-list">
             <BlockWithOneFeaturedDeal deals={item} position={index} />
           </div>

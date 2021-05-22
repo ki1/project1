@@ -13,22 +13,8 @@ import LoadMore from './LoadMore';
 import { fetchDeals, getApiPath } from './helpers';
 
 const RETRY_TIMEOUT_LIST = [
-  150,
-  250,
-  250,
-  500,
-  500,
-  500,
-  750,
-  750,
-  750,
-  1000,
-  1000,
-  1000,
-  1250,
-  1250,
-  1500,
-  1500,
+  150, 250, 250, 500, 500, 500, 750, 750, 750, 1000, 1000, 1000, 1250, 1250,
+  1500, 1500,
 ];
 
 const ConnectedBottomDeals = ({ evergreenDealId = null }) => {
@@ -44,15 +30,16 @@ const ConnectedBottomDeals = ({ evergreenDealId = null }) => {
     return `${URLDEAL}/${urlObj.path}?${urlObj.searchParams.toString()}`;
   };
 
-  const { data: deals, setSize, isValidating, size } = useSWRInfinite(
-    getKeyCallBack,
-    fetchDeals,
-    {
-      initialSize: 1,
-      dedupingInterval: 600,
-      revalidateOnFocus: false,
-    }
-  );
+  const {
+    data: deals,
+    setSize,
+    isValidating,
+    size,
+  } = useSWRInfinite(getKeyCallBack, fetchDeals, {
+    initialSize: 1,
+    dedupingInterval: 600,
+    revalidateOnFocus: false,
+  });
 
   useEffect(() => {
     scopeSWRResponse.current = {
@@ -105,6 +92,9 @@ const ConnectedBottomDeals = ({ evergreenDealId = null }) => {
     const dealsInBlocks = sectionedDeals.map((item, index) => {
       return (
         <Fragment key={index}>
+          <p>
+            <b>CONNECTED DEALS</b>
+          </p>
           <div className="bottom-deals container deals-products-list">
             <BlockWithOneFeaturedDeal deals={item} position={index} />
           </div>

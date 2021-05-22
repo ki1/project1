@@ -117,7 +117,7 @@ export function getDealInfo({
       dispatch(getNewProducts(location.shortName, ssr)),
       ssr ? dispatch(getNavigation(location, ssr)) : null,
       ssr ? dispatch(getLocations()) : null,
-      ssr ? dispatch(getTiles(query.slug)) || null : null,
+      // ssr ? dispatch(getTiles(query.slug)) || null : null,
       ssr ? dispatch(getScrollerConfiguration(ssr)) : null,
     ];
 

@@ -45,7 +45,7 @@ const MyApp = ({ Component, pageProps }) => {
 
   useEffect(() => {
     cookieMonsterInit(router.query);
-    didomiTokenSetter();
+    // didomiTokenSetter();
 
     if (process.browser) {
       window.setLightbox = (arg) => {
@@ -93,8 +93,8 @@ const MyApp = ({ Component, pageProps }) => {
   }, [dispatch, locations]);
 
   const fontsClass = theme.fonts.theme
-      ? `${theme.fonts.theme}, ${theme.fonts.base}`
-      : `${theme.fonts.base}`;
+    ? `${theme.fonts.theme}, ${theme.fonts.base}`
+    : `${theme.fonts.base}`;
 
   const [toasts, setToasts] = useState([]);
 
@@ -112,50 +112,50 @@ const MyApp = ({ Component, pageProps }) => {
   }, []);
 
   const toastPosition =
-      toasts[0] && toasts[0].position ? toasts[0].position : 'top-right';
+    toasts[0] && toasts[0].position ? toasts[0].position : 'top-right';
 
   useEffect(() => {
     dispatch(setPageType(router.asPath, locations));
   }, [dispatch, locations, pageType]);
 
   return (
-      <>
-        <ThemeProvider value={theme}>
-          <ToastProvider value={providerValue}>
-            <Layout {...pageProps} {...Component}>
-              {pageIsLoading ? (
-                  <LoadingPlaceholder />
-              ) : (
-                  <Component {...pageProps} />
-              )}
-              {process.env.NEXT_PUBLIC_ENVIRONMENT === 'dev' && (
-                  <ThemeSwitcher
-                      changeTheme={(themeName) => setTheme(themes[themeName])}
-                  />
-              )}
-              {showDidomi && <DidomiSDKBlock />}
-              {showSubModal && (
-                  <SubscribeModal
-                      showModal={showSubModal}
-                      setShowModal={setShowSubModal}
-                      isLightBox={true}
-                  />
-              )}
-              <div className={`toast-container ${toastPosition}`}>
-                {toasts.map((t) => (
-                    <Toast
-                        key={t.id}
-                        status={t.status}
-                        position={t.position}
-                        extraClass={t.extraClass}
-                        remove={() => providerValue.removeToast(t.id)}
-                    >
-                      {t.content}
-                    </Toast>
-                ))}
-              </div>
-            </Layout>
-            <style jsx global>{`
+    <>
+      <ThemeProvider value={theme}>
+        <ToastProvider value={providerValue}>
+          <Layout {...pageProps} {...Component}>
+            {pageIsLoading ? (
+              <LoadingPlaceholder />
+            ) : (
+              <Component {...pageProps} />
+            )}
+            {process.env.NEXT_PUBLIC_ENVIRONMENT === 'dev' && (
+              <ThemeSwitcher
+                changeTheme={(themeName) => setTheme(themes[themeName])}
+              />
+            )}
+            {showDidomi && <DidomiSDKBlock />}
+            {showSubModal && (
+              <SubscribeModal
+                showModal={showSubModal}
+                setShowModal={setShowSubModal}
+                isLightBox={true}
+              />
+            )}
+            <div className={`toast-container ${toastPosition}`}>
+              {toasts.map((t) => (
+                <Toast
+                  key={t.id}
+                  status={t.status}
+                  position={t.position}
+                  extraClass={t.extraClass}
+                  remove={() => providerValue.removeToast(t.id)}
+                >
+                  {t.content}
+                </Toast>
+              ))}
+            </div>
+          </Layout>
+          <style jsx global>{`
             @font-face {
               font-family: 'Nunito';
               font-style: normal;
@@ -182,9 +182,9 @@ const MyApp = ({ Component, pageProps }) => {
               border: 0;
             }
           `}</style>
-          </ToastProvider>
-        </ThemeProvider>
-      </>
+        </ToastProvider>
+      </ThemeProvider>
+    </>
   );
 };
 

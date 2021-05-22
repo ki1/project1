@@ -360,12 +360,12 @@ const SecondaryDeal = ({
           .secondary-deal {
             position: relative;
             width: 350px;
-            height: 306px;
+            //height: 306px;
           }
 
           .secondary-deal.full-width {
             width: 100%;
-            min-height: 220px;
+            //min-height: 220px;
           }
 
           .shared-deal-image__container .carousel-root {
@@ -408,7 +408,7 @@ const SecondaryDeal = ({
           }
 
           .card.small-deal {
-            height: 214px;
+            //height: 214px;
             margin: 0;
           }
 
@@ -432,7 +432,7 @@ const SecondaryDeal = ({
             // Not Ipad but too small for xl deal + small deal in the same row
             .secondary-deal {
               width: 326px;
-              height: 263px !important;
+              //height: 263px !important;
               margin-bottom: 0 !important;
             }
             .secondary-deal.full-width {
@@ -449,7 +449,7 @@ const SecondaryDeal = ({
 
           @media (max-width: ${theme.breakpoints.mdDown}) {
             .secondary-deal {
-              height: 233px !important;
+              //height: 233px !important;
               margin-bottom: 0 !important;
             }
           }
@@ -507,7 +507,7 @@ const SecondaryDeal = ({
               display: none;
             }
             .card.small-deal {
-              height: 214px;
+              //height: 214px;
               margin-bottom: 5px !important;
             }
             .secondary-deal .shared-deal-image__container {

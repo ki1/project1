@@ -19,7 +19,7 @@ const CountDown = () => {
   }, []);
 
   return (
-    <div className="nav-bar">
+    <div className="countdown">
       <div
         id="pricesRefreshTimer"
         data-testid="countdownBanner"
@@ -36,7 +36,8 @@ const CountDown = () => {
         </span>
       </div>
       <style jsx>{`
-        .nav-bar {
+        .countdown {
+          margin-bottom: 15px;
           position: relative;
           background-color: ${theme.colors.navbackground};
           border-bottom: 2px solid #d2d2d2;

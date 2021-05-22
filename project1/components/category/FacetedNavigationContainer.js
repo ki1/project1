@@ -195,7 +195,7 @@ const FacetedNavigationContainer = ({ isDealPage }) => {
           })}
         >
           <div
-            className={classNames('promo-block', {
+            className={classNames('', {
               'subcat-block': !isShop && !isLocation,
             })}
           >
@@ -222,9 +222,13 @@ const FacetedNavigationContainer = ({ isDealPage }) => {
         </div>
       )}
       {isShop && (
-        <div className="promo-block">
-          <CarouselDealBlock deals={carouselOne} />
-          <CarouselDealBlock deals={carouselTwo} />
+        <div className="row">
+          <div className="col-sm-6 col-lg-12">
+            <CarouselDealBlock deals={carouselOne} />
+          </div>
+          <div className="col-sm-6 col-lg-12">
+            <CarouselDealBlock deals={carouselTwo} />
+          </div>
         </div>
       )}
       <style jsx>{`
